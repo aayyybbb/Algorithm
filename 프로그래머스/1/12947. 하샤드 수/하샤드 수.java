@@ -1,18 +1,22 @@
 class Solution {
     public boolean solution(int x) {
         int sum = 0, n = x;
-        
-        while (n != 0) {
+
+        // n이 0이 될 때까지 반복. n의 모든 자릿수를 처리할 때까지 반복.
+        while (n != 0) { 
+            
+            // n의 마지막 자릿수를 sum과 합
+            // n % 10은 n의 마지막 자릿수를 구하는 연산
             sum += n % 10;
+            
+            // n을 10으로 나누어 마지막 자릿수를 제거
+            // n이 0이 될 때까지 반복
             n /= 10;
         }
         
         return x % sum == 0;
     }
 }
-
-sum 변수는 각 자릿수의 합을 저장하기 위한 변수
-n 변수는 x 값을 복사하여 자릿수를 계산하는 데 사용
 
 //수정 전 코드 
 class Solution {
